@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="600.0" style="-fx-background-color: azure;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.todolist.controller.IndexController">
    <children>
-      <DatePicker fx:id="dtData" layoutX="36.0" layoutY="313.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="313.0" />
+      <DatePicker fx:id="dtData" layoutX="36.0" layoutY="313.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="313.0" />
       <Label layoutX="40.0" layoutY="194.0" text="Tarefa:" textFill="#ababab" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="194.0">
          <font>
             <Font size="18.0" />
@@ -29,21 +29,49 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="lbObrig" layoutX="213.0" layoutY="157.0" text="! Campo obrigatório" textFill="AZURE" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="157.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
       <Label layoutX="352.0" layoutY="275.0" text="Status:" textFill="#ababab" AnchorPane.leftAnchor="352.0" AnchorPane.topAnchor="275.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <TextArea fx:id="tfObs" layoutX="40.0" layoutY="391.0" prefHeight="100.0" prefWidth="500.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="391.0" />
-      <TextField fx:id="tfDescricao" layoutX="40.0" layoutY="230.0" promptText="Descreva a tarefa..." AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="230.0" />
-      <TextField fx:id="tfStatus" layoutX="350.0" layoutY="313.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="313.0" />
-      <Button layoutX="179.0" layoutY="515.0" mnemonicParsing="false" onAction="#btAdiar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="179.0">
+      <TextField fx:id="tfDescricao" layoutX="40.0" layoutY="230.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="230.0" />
+      <TextField fx:id="tfStatus" editable="false" layoutX="350.0" layoutY="313.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="313.0" />
+      <Button layoutX="426.0" layoutY="512.0" mnemonicParsing="false" onAction="#btConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="460.0">
+         <tooltip>
+            <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Concluir">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/icons8-ok-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="179.0" layoutY="515.0" mnemonicParsing="false" onAction="#btAdiar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="180.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Adiar">
                <font>
                   <Font size="14.0" />
                </font></Tooltip>
          </tooltip>
+         <graphic>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/icons8-calendário-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
       <Button layoutX="487.0" layoutY="120.0" mnemonicParsing="false" onAction="#btLimpar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: azure;" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="120.0">
          <graphic>
@@ -59,35 +87,22 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button layoutX="40.0" layoutY="515.0" mnemonicParsing="false" onAction="#btSalvar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="40.0">
-         <graphic>
-            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../imagens/icons8-salvar-64.png" />
-               </image></ImageView>
-         </graphic>
+      <Button layoutX="40.0" layoutY="515.0" mnemonicParsing="false" onAction="#btSalvar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Salvar">
                <font>
                   <Font size="14.0" />
                </font></Tooltip>
          </tooltip>
-      </Button>
-      <Button layoutX="462.0" layoutY="515.0" mnemonicParsing="false" onAction="#btConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.leftAnchor="462.0">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../imagens/icons8-ok-64.png" />
-               </image></ImageView>
+                  <Image url="@../imagens/icons8-salvar-64.png" />
+               </image>
+            </ImageView>
          </graphic>
-         <tooltip>
-            <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Concluir">
-               <font>
-                  <Font size="14.0" />
-               </font></Tooltip>
-         </tooltip>
       </Button>
-      <Button layoutX="320.0" layoutY="515.0" mnemonicParsing="false" onAction="#btApagar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.leftAnchor="320.0">
+      <Button layoutX="320.0" layoutY="515.0" mnemonicParsing="false" onAction="#btApagar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="320.0">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -116,11 +131,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tfNome" layoutX="40.0" layoutY="154.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="154.0" />
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="200.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagens/icons8-calendário-64.png" />
-         </image>
-      </ImageView>
+      <TextField fx:id="tfNome" layoutX="40.0" layoutY="154.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="154.0" />
    </children>
 </AnchorPane>
