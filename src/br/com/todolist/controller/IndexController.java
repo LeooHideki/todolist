@@ -1,20 +1,33 @@
 package br.com.todolist.controller;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import br.com.todolist.io.TarefaIO;
 import br.com.todolist.model.StatusTarefa;
 import br.com.todolist.model.Tarefa;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
+import jdk.nashorn.internal.ir.CatchNode;
 
-public class IndexController {
+public class IndexController implements Initializable {
 
     @FXML
     private DatePicker dtData;
@@ -50,6 +63,15 @@ public class IndexController {
     private Button btSalvar;
     
     @FXML
+    private TableColumn<Tarefa, LocalDate> tcData;
+    
+    @FXML
+    private TableColumn<Tarefa, String> tcTarefa;
+    
+    @FXML
+    private TableView<Tarefa> tvTarefa;
+    
+    private List<Tarefa> tarefas;
     private Tarefa tarefa;
 
     @FXML
@@ -102,11 +124,17 @@ public class IndexController {
     		tarefa.setComentarios(tfObs.getText());
     		
     		// TODO INSERIR NO "BANCO DE DADOS"
-    		System.out.println(tarefa.formatToSave());
-    		//LIMPAR OS CAMPOS
-    		limpar();
-    		
-    		
+    		try {
+    			TarefaIO.insert(tarefa);
+    			//LIMPAR OS CAMPOS
+        		limpar();
+    		}catch (FileNotFoundException e) {
+				JOptionPane.showMessageDialog(null, "Arquivo não encontrado: "+e.getMessage(),"Erro",JOptionPane.ERROR_MESSAGE);
+				e.printStackTrace();
+    		}catch (IOException e) {
+    			JOptionPane.showMessageDialog(null, "Erro ao gravar: "+e.getMessage(),"Erro", JOptionPane.ERROR_MESSAGE);
+    			e.printStackTrace();
+			} 		
     	}
     }
     
@@ -121,4 +149,21 @@ public class IndexController {
     	lbObrig.setStyle("-fx-text-fill: azure");
     }
 
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		//DEFINIR OS PARÂMETROS PARA AS COLUNAS DO TABLEVIEW
+		tcData.setCellValueFactory(new PropertyValueFactory<>("dataLimite"));
+		tcTarefa.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+	}
+	
+	public void carregarTarefas() {
+		try {
+			tarefas = TarefaIO.read();
+			tvTarefa.setItems(FXCollections.observableArrayList(tarefas));
+			tvTarefa.refresh();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Erro ao carregar as tarefas :"+e.getMessage(),"Erro",JOptionPane.ERROR_MESSAGE);
+			e.printStackTrace();
+		}
+	}
 }
