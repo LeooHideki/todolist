@@ -44,7 +44,7 @@
       <TextArea fx:id="tfObs" layoutX="40.0" layoutY="391.0" prefHeight="100.0" prefWidth="500.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="391.0" />
       <TextField fx:id="tfDescricao" layoutX="40.0" layoutY="230.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="230.0" />
       <TextField fx:id="tfStatus" editable="false" layoutX="350.0" layoutY="313.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="313.0" />
-      <Button layoutX="426.0" layoutY="512.0" mnemonicParsing="false" onAction="#btConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="460.0">
+      <Button fx:id="btConcluir" disable="true" layoutX="426.0" layoutY="512.0" mnemonicParsing="false" onAction="#btConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="460.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Concluir">
                <font>
@@ -60,7 +60,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="179.0" layoutY="515.0" mnemonicParsing="false" onAction="#btAdiar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="180.0">
+      <Button fx:id="btAdiar" disable="true" layoutX="179.0" layoutY="515.0" mnemonicParsing="false" onAction="#btAdiar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="180.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Adiar">
                <font>
@@ -75,7 +75,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="487.0" layoutY="120.0" mnemonicParsing="false" onAction="#btLimpar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: azure;" AnchorPane.topAnchor="120.0">
+      <Button fx:id="btLimpar" layoutX="487.0" layoutY="120.0" mnemonicParsing="false" onAction="#btLimpar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: azure;" AnchorPane.topAnchor="120.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -89,7 +89,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button layoutX="40.0" layoutY="515.0" mnemonicParsing="false" onAction="#btSalvar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+      <Button fx:id="btSalvar" layoutX="40.0" layoutY="515.0" mnemonicParsing="false" onAction="#btSalvar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Salvar">
                <font>
@@ -104,7 +104,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="320.0" layoutY="515.0" mnemonicParsing="false" onAction="#btApagar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="320.0">
+      <Button fx:id="btApagar" disable="true" layoutX="320.0" layoutY="515.0" mnemonicParsing="false" onAction="#btApagar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="320.0">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
