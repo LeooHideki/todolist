@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="418.0" prefWidth="283.0" style="-fx-background-color: #ccddff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.todolist.controller.SobreController">
+   <children>
+      <ImageView fitHeight="212.0" fitWidth="201.0" layoutX="42.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagens/icone2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btOk" layoutX="112.0" layoutY="375.0" mnemonicParsing="false" onAction="#btOkClick" prefHeight="20.0" prefWidth="60.0" text="Ok" textAlignment="CENTER" textFill="#807979">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="32.0" layoutY="252.0" text="Desenvolvido por Leonardo" textFill="#ababab">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="288.0" text="Técnico de Desenvolvimento de Sistemas" textFill="#ababab" />
+      <Label layoutX="72.0" layoutY="336.0" text="Data de criação: 10/2021" textFill="#ababab" />
+      <Label layoutX="59.0" layoutY="313.0" text="Escola SENAI &quot;Ricardo Lerner&quot;" textFill="#ababab" />
+      <BorderPane layoutX="23.0" layoutY="246.0" prefHeight="115.0" prefWidth="238.0" style="-fx-border-color: #ababab;" />
+   </children>
+</AnchorPane>

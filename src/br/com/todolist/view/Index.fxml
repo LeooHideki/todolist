@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -15,36 +18,36 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: azure;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.todolist.controller.IndexController">
    <children>
-      <DatePicker fx:id="dtData" layoutX="36.0" layoutY="313.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="313.0" />
-      <Label layoutX="40.0" layoutY="194.0" text="Tarefa:" textFill="#ababab" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="194.0">
+      <DatePicker fx:id="dtData" layoutX="33.0" layoutY="337.0" promptText="!" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="340.0" />
+      <Label layoutX="37.0" layoutY="220.0" text="Tarefa:" textFill="#ababab" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="220.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="275.0" text="Data para realização:" textFill="#ababab" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="275.0">
+      <Label layoutX="37.0" layoutY="309.0" text="Data para realização:" textFill="#ababab" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="309.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="355.0" text="Observação:" textFill="#ababab" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="355.0">
+      <Label layoutX="39.0" layoutY="475.0" text="Observação:" textFill="#ababab" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="475.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lbObrig" layoutX="213.0" layoutY="157.0" text="! Campo obrigatório" textFill="AZURE" AnchorPane.leftAnchor="213.0" AnchorPane.topAnchor="157.0">
+      <Label fx:id="lbObrig" layoutX="139.0" layoutY="202.0" text="! Campo obrigatório" textFill="RED" visible="false" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="202.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="352.0" layoutY="275.0" text="Status:" textFill="#ababab" AnchorPane.leftAnchor="352.0" AnchorPane.topAnchor="275.0">
+      <Label layoutX="237.0" layoutY="406.0" text="Status:" textFill="#ababab" AnchorPane.leftAnchor="237.0" AnchorPane.topAnchor="406.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="tfObs" layoutX="40.0" layoutY="391.0" prefHeight="100.0" prefWidth="500.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="391.0" />
-      <TextField fx:id="tfDescricao" layoutX="40.0" layoutY="230.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="230.0" />
-      <TextField fx:id="tfStatus" editable="false" layoutX="350.0" layoutY="313.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="313.0" />
-      <Button fx:id="btConcluir" disable="true" layoutX="426.0" layoutY="512.0" mnemonicParsing="false" onAction="#btConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="460.0">
+      <TextArea fx:id="tfObs" layoutX="39.0" layoutY="514.0" prefHeight="100.0" prefWidth="500.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="514.0" />
+      <TextField fx:id="tfDescricao" layoutX="37.0" layoutY="254.0" prefHeight="25.0" prefWidth="352.0" promptText="!" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="254.0" />
+      <TextField fx:id="tfStatus" editable="false" layoutX="298.0" layoutY="407.0" AnchorPane.leftAnchor="295.0" AnchorPane.topAnchor="407.0" />
+      <Button fx:id="btConcluir" disable="true" layoutX="1015.0" layoutY="55.0" mnemonicParsing="false" onAction="#btConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.leftAnchor="1015.0" AnchorPane.topAnchor="55.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Concluir">
                <font>
@@ -60,7 +63,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btAdiar" disable="true" layoutX="179.0" layoutY="515.0" mnemonicParsing="false" onAction="#btAdiar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="180.0">
+      <Button fx:id="btAdiar" disable="true" layoutX="755.0" layoutY="55.0" mnemonicParsing="false" onAction="#btAdiar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.leftAnchor="755.0" AnchorPane.topAnchor="55.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Adiar">
                <font>
@@ -75,7 +78,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btLimpar" layoutX="487.0" layoutY="120.0" mnemonicParsing="false" onAction="#btLimpar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: azure;" AnchorPane.topAnchor="120.0">
+      <Button fx:id="btLimpar" layoutX="445.0" layoutY="144.0" mnemonicParsing="false" onAction="#btLimpar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: azure;" AnchorPane.topAnchor="144.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -89,7 +92,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Button fx:id="btSalvar" layoutX="40.0" layoutY="515.0" mnemonicParsing="false" onAction="#btSalvar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+      <Button fx:id="btSalvar" layoutX="621.0" layoutY="55.0" mnemonicParsing="false" onAction="#btSalvar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.leftAnchor="621.0" AnchorPane.topAnchor="55.0">
          <tooltip>
             <Tooltip style="-fx-background-color: azure; -fx-text-fill: #ababab;" text="Salvar">
                <font>
@@ -104,7 +107,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btApagar" disable="true" layoutX="320.0" layoutY="515.0" mnemonicParsing="false" onAction="#btApagar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="320.0">
+      <Button fx:id="btApagar" disable="true" layoutX="882.0" layoutY="55.0" mnemonicParsing="false" onAction="#btApagar" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: azure;" AnchorPane.leftAnchor="882.0" AnchorPane.topAnchor="55.0">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -118,7 +121,7 @@
                </font></Tooltip>
          </tooltip>
       </Button>
-      <Label layoutX="206.0" layoutY="33.0" text="To Do List" textAlignment="CENTER" textFill="#ababab" textOverrun="CLIP" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="33.0">
+      <Label layoutX="206.0" layoutY="33.0" text="To Do List" textAlignment="CENTER" textFill="#ababab" textOverrun="CLIP" AnchorPane.leftAnchor="206.0" AnchorPane.topAnchor="33.0">
          <font>
             <Font name="Stencil" size="36.0" />
          </font>
@@ -128,17 +131,46 @@
             <Font name="Script MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="120.0" text="Nome:" textFill="#ababab" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="120.0">
+      <Label layoutX="37.0" layoutY="131.0" text="Nome:" textFill="#ababab" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="131.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tfNome" layoutX="40.0" layoutY="154.0" promptText="!" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="154.0" />
-      <TableView fx:id="tvTarefa" layoutX="576.0" layoutY="221.0" prefHeight="393.0" prefWidth="589.0">
+      <TextField fx:id="tfNome" layoutX="37.0" layoutY="166.0" prefHeight="25.0" prefWidth="352.0" promptText="!" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="166.0" />
+      <TableView fx:id="tvTarefa" layoutX="576.0" layoutY="198.0" prefHeight="416.0" prefWidth="589.0">
         <columns>
-          <TableColumn fx:id="tcData" prefWidth="97.0" text="Data" />
-          <TableColumn fx:id="tcTarefa" prefWidth="395.0" text="Tarefa" />
+          <TableColumn fx:id="tcData" prefWidth="139.0" text="Data" />
+          <TableColumn fx:id="tcTarefa" prefWidth="449.0" text="Tarefa" />
         </columns>
       </TableView>
+      <TextField fx:id="tfCodigo" editable="false" layoutX="103.0" layoutY="407.0" prefHeight="25.0" prefWidth="33.0" />
+      <Label layoutX="40.0" layoutY="406.0" text="Código:" textFill="#ababab" AnchorPane.leftAnchor="37.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbDataConcluida" layoutX="243.0" layoutY="339.0" text="Label" textFill="#17f24e" visible="false" AnchorPane.leftAnchor="243.0" AnchorPane.topAnchor="339.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <MenuBar layoutX="2.0" layoutY="2.0" style="-fx-background-color: #e6ffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuExportar" text="Exportar como HTML" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuSair" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuSobre" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="lbAberta" layoutX="576.0" layoutY="170.0" text="Tarefas abertas: " textFill="#92bcfc" />
+      <Label fx:id="lbAdiada" layoutX="829.0" layoutY="170.0" text="Tarefas adiadas:" textFill="#dada66" />
+      <Label fx:id="lbConcluida" layoutX="1060.0" layoutY="170.0" text="Tarefas concluídas:" textFill="#95ff95" />
    </children>
 </AnchorPane>
